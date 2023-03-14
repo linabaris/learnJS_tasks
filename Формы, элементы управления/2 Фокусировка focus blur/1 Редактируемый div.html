@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="mutable">Enter your text</div>
+    <script>
+        let div = document.querySelector('.mutable');
+        let textArea = document.createElement('textarea');
+        let text = div.innerHTML;
+        console.log(text);
+        div.addEventListener('click', () => {
+            div.replaceWith(textArea);
+            textArea.value = text;
+            
+        })
+        textArea.addEventListener('focusout', () => {
+            text = textArea.value;
+            textArea.replaceWith(div);
+            div.innerHTML = text;
+        })
+        textArea.addEventListener('keydown', (e) => {
+            // e.preventDefault();
+            if(e.key == 'Enter') {
+                textArea.blur();
+            }
+        })
+    </script>
+</body>
+</html>
