@@ -1,4 +1,6 @@
 let listLi = document.querySelectorAll('li');
 for(let item of listLi) {
-    console.log(item.innerHTML);
+    let title = item.firstChild.data;
+    let count = item.getElementsByTagName('li');
+    console.log(`${title} : ${count}`);
 }

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <h1>My list</h1>
+    <ul>
+
+    </ul>
+    <script>
+        let ul = document.querySelector('ul');
+        while(true) {
+            let value = prompt('enter your li', '');
+            if(!value) break;
+            let newLi = document.createElement('li');
+            ul.append(newLi);
+            newLi.innerHTML = value;
+        }
+    </script>
+</body>
+</html>
