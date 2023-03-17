@@ -1,0 +1,20 @@
+Который из обработчиков запустится? 
+Что будет выведено при клике после выполнения кода?
+//Answer ---  1,2
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <button>Click</button>
+
+    <script>
+        let button = document.querySelector('button');
+        button.addEventListener("click", () => alert("1"));
+        button.removeEventListener("click", () => alert("1")); //не удалит листенер тк здесь передана другая ф-ия
+        button.onclick = () => alert(2); // сработает независимо от addEventListener
+    </script>
+</body>
+</html>

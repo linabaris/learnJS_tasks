@@ -1,0 +1,13 @@
+<script>
+    function handler() {
+      alert( "..." );
+      return false;
+    }
+</script>
+  
+<a href="https://w3.org" onclick="handler()">браузер откроет w3.org</a>
+Почему в коде ниже return false не работает?
+потому что функция handler находится внутри ф-ии-обработчика.\
+когда handler вовзращает false это значение находится в лекс окр функции-обработчика и никак
+не влияет на результат.
+чтобы заработало: либо event.preventDefault(), либо onclick=" return handler()", чтобы вернуть false из внешней функции.

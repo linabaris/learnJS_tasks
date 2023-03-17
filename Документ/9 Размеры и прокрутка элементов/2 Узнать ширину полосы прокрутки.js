@@ -1,0 +1,1 @@
+let widthScroll = elem.offsetWidth - elem.clientWidth;
